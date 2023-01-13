@@ -1,6 +1,6 @@
 import React from "react";
-import {Week} from "../TestClass";
-import { TimeSlotType } from "../TestClass"
+import {Week} from "../ClassTypes";
+import { TimeSlotType } from "../ClassTypes"
 
 type Props = { week : Week}
 

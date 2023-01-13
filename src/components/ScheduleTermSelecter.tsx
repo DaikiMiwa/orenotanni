@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '@mui/material'
-import { Quarter, Grade} from '../TestClass'
+import { Quarter, Grade} from '../ClassTypes'
 
 const ScheduleTermSelecter = () => {
     console.log("選んでね")
