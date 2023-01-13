@@ -24,7 +24,7 @@ export const ClassStyle = {
 export type ClassStyle = typeof ClassStyle[keyof typeof ClassStyle];
 export const ClassStyleType = Object.values(ClassStyle);
 
-const Grade = {
+export const Grade = {
     First: 1,
     Second: 2
 }
@@ -32,7 +32,7 @@ const Grade = {
 export type Grade = typeof Grade[keyof typeof Grade];
 export const GradeType = Object.values(Grade);
 
-const Week = {
+export const Week = {
     Mon:"月",
     Tue:"火",
     Wed:"水",
@@ -43,7 +43,7 @@ const Week = {
 export type Week = typeof Week[keyof typeof Week];
 export const WeekType = Object.values(Week);
 
-const Quarter = {
+export const Quarter = {
     First:1,
     Second:2,
     Third:3,
@@ -59,6 +59,7 @@ export const TimeSlot = {
     Fourth:"7,8",
     Fifth:"9,10",
 } as const
+
 export type TimeSlot = typeof TimeSlot[keyof typeof TimeSlot];
 export const TimeSlotType = Object.values(TimeSlot);
 
@@ -83,5 +84,3 @@ export type WeekSchedule = {
 export type DaySchedule = {
     [key in TimeSlot] : Class
 }
-
-WeekType.map((week)=> {console.log(week)})
