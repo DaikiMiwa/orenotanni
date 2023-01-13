@@ -1,8 +1,20 @@
 import React from "react";
+import { Grid } from "@mui/material"
 
 const ClassSelector = ()=> {
     return (
-        <div>ClassSelector</div>
+        <Grid container>
+            <Grid item xs ={12}>
+                <div>
+                    検索リスト
+                </div>
+            </Grid>
+            <Grid item xs = {12}>
+                <div>
+                    項目
+                </div>
+            </Grid>
+        </Grid>
     )
 }
 
