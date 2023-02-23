@@ -1,34 +1,41 @@
 import React from "react";
-import {Grid} from "@mui/material"
+import { Grid } from "@mui/material"
 import ScheduleDayRender from "./ScheduleDayRender";
-import { WeekType, TimeSlotType } from "../ClassTypes";
+import { WeekType, TimeSlotType, Grade, Quarter } from "../ClassTypes";
+import { TotalSchedule } from "../ClassTypes";
 
-const ScheduleWeekRender = () => {
+type ScheduleWeekRenderProps = {
+    grade: Grade
+    quater: Quarter
+    schedule: TotalSchedule
+}
 
-    const timeSlotLists = TimeSlotType.map((timeslot)=>{
-            return (
-                <div>{timeslot}</div>
-            )
-        }
+const ScheduleWeekRender = ({ grade, quater, schedule }: ScheduleWeekRenderProps) => {
+
+    const timeSlotLists = TimeSlotType.map((timeslot) => {
+        return (
+            <div>{timeslot}</div>
+        )
+    }
     );
 
     const weekLists = WeekType.map((week) => {
         return (
             <Grid xs={2} item>
-                {<ScheduleDayRender week={week}/>}
+                {<ScheduleDayRender week={week} schedule={schedule[grade][quater][week]} />}
             </Grid>
         )
-        }
+    }
     );
 
     return (
         <div>
             <Grid container>
-                <Grid xs={2}> 
+                <Grid xs={2}>
                     <div> 時限 </div>
-                    { timeSlotLists }
+                    {timeSlotLists}
                 </Grid>
-                { weekLists }
+                {weekLists}
             </Grid>
         </div>
     )
